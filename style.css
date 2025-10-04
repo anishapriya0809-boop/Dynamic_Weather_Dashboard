@@ -1,0 +1,175 @@
+body {
+  font-family: Arial, sans-serif;
+  background: url("assets/bg-sunny.jpg") no-repeat center center/cover;
+  margin: 0;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  background: #3f51b5;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+header .logo {
+  width: 50px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  max-width: 250px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+}
+
+.search-box button {
+  background: #303f9f;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.weather-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.weather-container img {
+  width: 100px;
+}
+
+/* EXTRA INFO CARDS */
+.extra-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.info-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.info-card img {
+  width: 24px;
+  margin-bottom: 5px;
+}
+
+/* FORECAST CARDS */
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 12px;
+}
+
+.forecast-card {
+  background: #e3f2fd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  background: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top:0;left:0;right:0;bottom:0;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-box {
+  background: rgba(255,0,0,0.8);
+}
+
+/* 📱 RESPONSIVE DESIGN */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .search-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box input {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .extra-info {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 20px;
+  }
+
+  .weather-container img {
+    width: 80px;
+  }
+
+  .extra-info {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+
+  .forecast-container {
+    grid-template-columns: 1fr 1fr; /* two per row */
+    gap: 8px;
+  }
+
+  .forecast-card {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
